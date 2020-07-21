@@ -1,0 +1,22 @@
+body {
+	background-color: #51555f;
+}
+
+.m_b_15 {
+	margin-bottom: 15px;
+}
+
+.not_found {
+	width: 50%;
+    display: inline-block;
+    padding-bottom: 100%;
+    padding-top: 30%;
+	text-align: center;
+}
+.not_found h1 {
+	font-size: 100px;
+}
+
+.not_found h2 {
+	font-size: 84px;
+}

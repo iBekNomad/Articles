@@ -1,0 +1,71 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Calculator #1 Edition</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container pt-5">
+        <form class="d-flex align-items-start flex-column mt-5" action="/" method="post">
+            {% csrf_token %}
+
+            <label>First Number</label>
+            <input type="number" name="FirstNumber"/>
+            <br/>
+            <label>Second Number</label>
+            <input type="number" name="SecondNumber">
+            <br/>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="add" value="+" name="calc" class="custom-control-input">
+                <label class="custom-control-label" for="add">add</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="subtract" value="-" name="calc" class="custom-control-input">
+                <label class="custom-control-label" for="subtract">subtract</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="multiply" value="*" name="calc" class="custom-control-input">
+                <label class="custom-control-label" for="multiply">multiply</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="divide" value="/" name="calc" class="custom-control-input">
+                <label class="custom-control-label" for="divide">divide</label>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-info mt-2" value="Send">Calculate</button>
+                </div>
+            </div>
+        </form>
+        <div class="card">
+            <div class="card-body text-info">
+                <h2 class="text-left">Result: {{ first }} {{ sign }} {{ second }} {{ eq }} {{ result }}</h2>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>
