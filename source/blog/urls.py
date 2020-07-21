@@ -19,6 +19,7 @@ from webapp.views import index_view, article_create_view, calc_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', calc_view),
+    path('calc/', calc_view),
     path('articles/add/', article_create_view),
+    path('', index_view)
 ]
