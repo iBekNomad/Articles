@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 def index_view(request):
     print(request.GET.getlist('author'))
-    return render(request, 'index.html')
+    return render(request, 'calc.html')
 
 
 def article_create_view(request):
@@ -21,7 +21,7 @@ def article_create_view(request):
 
 def calc_view(request):
     if request.method == 'GET':
-        return render(request, 'index.html')
+        return render(request, 'calc.html')
     elif request.method == 'POST':
         print(request.POST)
 
@@ -47,4 +47,4 @@ def calc_view(request):
             'eq': '='
         }
 
-        return render(request, 'index.html', context)
+        return render(request, 'calc.html', context)
